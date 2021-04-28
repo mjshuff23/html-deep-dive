@@ -166,4 +166,6 @@
   
     - `<noscript>` - Defines alternate content to be displayed to users that have disabled scripts in their browser or don't have support
   
-    - `<base>`
+    - `<base>` - Specifies base URL and/or target for all relative URLs in a document.  Must have `href`, `target`, or both.  Can only be one, and must be in `<head>`
+      - `href` - Base URL for all relative URLs in page
+      - `target` - Default target for all hyperlinks and forms in the page
