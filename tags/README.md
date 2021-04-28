@@ -96,6 +96,25 @@
               - Gives the browser instructions on how to control dimensions and scaling
               - `width=device-width` sets the width of the page to follow the screen-width of the device
               - `initial-scale=1.0` sets the initial zoom level when page is first loaded
-    - `<link>`
+    - `<link>` - Defines a relationships between the current document and an external resource, most often external stylesheets
+      - is an *empty element* composed only of attributes
+      - *Attributes*:
+        - `href` - Specifies the URL of the external resource you're linking to. `<link rel="stylesheet" href="styles.css">`
+        - `hreflang` - Specifies the language of the text in the linked document.  Purely advisory
+          - `<link rel="parent" href="tag_link.asp" hreflang="en">`
+        - `media` - Specifies what media/device the target resource is optimized for
+          - Mostly used with CSS style sheets to specify different styles for different media types
+          - *Operators*:
+            - `and` - Specifies AND operator
+            - `not` - Specifies NOT operator
+            - `,` - Specifies OR operator
+          - *Devices*:
+            - `all` - Default.  Used for all media type devices
+            - `print` - Used for print preview mode/printed pages
+            - `screen` - Used for computer screens, tablets, smart-phones, etc...
+            - `speech` - Used for screenreaders that read the page out loud
+            - `aural, braille, handheld, projection, tty, tv` - **Deprecated**
+          - *Values*:
+            - Same as `<style>` tag above, except `device-aspect-ratio`, `device-width`, and `device-height` are **deprecated**
     - `<script>`
     - `<base>`
