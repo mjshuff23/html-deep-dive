@@ -10,6 +10,7 @@
         - Go for a longer, more descriptive title (No greater than 60 characters)
         - Do not just use a list of words, aim for accurate, meaningful titles
         - You can only have one title
+
     - `<style>` - The `<style>` tag is used to define style information (CSS) for a document
       - To link to an external stylesheet, use `<link>`
       - `media` - attribute for `<style>` that specifies what media/device the CSS is optimized for
@@ -57,6 +58,7 @@
             - `media="handheld and (grid:1)"`
         - `type` - Specifies the Internet media tpye(MIME type) of the style tag
           - defaults to `"text/css"`, also the only standard type accepted right now
+
     - `<meta>` - Defines metadata about HTML document.  Always goes inside `<head>`.  Machine parseable
       - Used by browsers, search engines, and other web services
       - Supports *global attributes*
@@ -96,6 +98,7 @@
               - Gives the browser instructions on how to control dimensions and scaling
               - `width=device-width` sets the width of the page to follow the screen-width of the device
               - `initial-scale=1.0` sets the initial zoom level when page is first loaded
+  
     - `<link>` - Defines a relationships between the current document and an external resource, most often external stylesheets
       - is an *empty element* composed only of attributes
       - *Attributes*:
@@ -116,5 +119,37 @@
             - `aural, braille, handheld, projection, tty, tv` - **Deprecated**
           - *Values*:
             - Same as `<style>` tag above, except `device-aspect-ratio`, `device-width`, and `device-height` are **deprecated**
+        - `referrerpolicy` - Specifies which referrer information to send
+          - `no-referrer` - No information will be sent with request
+          - `no-referrer-when-downgrade` - Default.  The referrer header will not be sent to origin without HTTPS
+          - `origin` - Send only scheme, host, and port to requested client
+          - `origin-when-cross-origin` - For CORS requests: Send scheme, host, port. For same-origin: Also include the path
+          - `same-origin` - For same-origin requests: Referrer info will be sent.  For CORS: No info
+          - `strict-origin` - Only send referrer info if the security level is the same(HTTPS-HTTPS).  Do not send to less secure destination
+          - `strict-origin-when-cross-origin` - Send full path when performing same-origin request.  Send only origin when the security level stays the same.  Send no header to less secure destination
+          - `unsafe-url` - Send origin, path, and query string(but not fragment, username, password).  Considered unsafe
+        - `rel` -  Specifies relationship between document and linked resource
+          - `alternate` - Provides a link to an alternate version of document(print page, translated, mirror).
+            - `<link rel="alternate" type="application/atom+xml title="W3Schools News" href="/blog/news/atom">`
+          - `author` - Provides a link to the author of the document
+          - `dns-prefetch` - Specifies that the browser should preemptively perform DNS resolution for the target resource's origin
+          - `help` - Provides na link to a help document. `<link rel="help" href="/help/">`
+          - `icon` - Imports an icon to represent a document. `<link rel="icon" href="/favicon.ico" type="image/x-icon">`
+          - `license` - Provides link to copyright information for document
+          - `next` - Provides a link to the next document in the series
+          - `pingback` - Provides the address of the pingback server that handles pingbacks to current document
+          - `preconnect` - Specifies that the browser should preemptively connect to target resource's origin
+          - `prefetch` - Specifies that the browser should preemptively fetch and cache the target resource as it is linked to be required for a follow-up navigation
+          - `preload` - Specifies that the browser agent must preemptively fetch and cache the target resource for current navigation according to the destination given by the `as` attribute
+          - `prerender` - Specifies that the browser should pre-render(load) the specified webpage in the background.  Wastes users bandwidth
+          - `prev` - Indicates that the document is part of a series, and the previous document is the references document
+          - `search` - Provides a link to a resource that can be used to search through the current document and related pages
+          - `stylesheet` - Imports a stylesheet
+        - `sizes` - Specifies the sizes of icons for visual media.  Only used if `rel="icon"`
+          - `HeightXWidth` - Specifies one or more sizes for linked icon
+            - `<link rel="icon" href="favicon.png" sizes="16x16" type="image/png">` 1 size
+            - `<link rel="icon" href="favicon.png" sizes="16x16 32x32" type="image/png">` 2 sizes
+          - `any` - Specifies icon is scalable, like an SVG
+        - `type` - Specifies media type (MIME Type) of linked document/resource
     - `<script>`
     - `<base>`
