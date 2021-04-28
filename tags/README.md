@@ -151,5 +151,19 @@
             - `<link rel="icon" href="favicon.png" sizes="16x16 32x32" type="image/png">` 2 sizes
           - `any` - Specifies icon is scalable, like an SVG
         - `type` - Specifies media type (MIME Type) of linked document/resource
-    - `<script>`
+  
+    - `<script>` - Used to embed a client-side script(JavaScript). Either contains script statements or links to an external script with the `src` attribute
+      - `async` - A script that will be run asynchronously as soon as it is available.  Boolean attribute.  Only for external scripts
+      - `crossorigin` - Sets mode of request to HTTP CORS request.  Used when making request to load resource off other server.
+        - `anonymous` - No credentials are sent with CORS request
+        - `use-credentials` - Credentials are sent(cookie, certificate, HTTP Basic Authentication)
+      - `defer` - Script is executed when page has finished parsing.  Boolean attribute.  Only for external scripts
+      - `integrity` - Allows browser to check the fetched script to ensure the code is never loaded if the source has been manipulated.
+        - Subresource Integrity(SRI) is a W3C specification that allows devs to ensure resources hosted on third party servers have not been altered.  You can use an online SRI hash generate to generate integrity hashes. (https://www.srihash.org)
+      - `reffererpolicy` - Refer to above documentation
+      - `src` - URL of external script file.  Can be absolute or relative
+      - `type` - Type of script.  Either `application/javascript` or `module`
+  
+    - `<noscript>` - Defines alternate content to be displayed to users that have disabled scripts in their browser or don't have support
+  
     - `<base>`
