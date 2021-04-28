@@ -10,8 +10,92 @@
         - Go for a longer, more descriptive title (No greater than 60 characters)
         - Do not just use a list of words, aim for accurate, meaningful titles
         - You can only have one title
-    - `<style>` 
-    - `<meta>` 
+    - `<style>` - The `<style>` tag is used to define style information (CSS) for a document
+      - To link to an external stylesheet, use `<link>`
+      - `media` - attribute for `<style>` that specifies what media/device the CSS is optimized for
+        - `<style media="value">`
+        - ### Operators:
+          - `and` - Specifies an AND operator
+          - `not` - Specifies a NOT operator
+          - `,` - Specifies an OR operator
+        - ### Devices:
+          - `all` - Default.  Suitable for all devices
+          - `aural` - Speech synthesizers
+          - `braille` - Braille feedback devices
+          - `handheld` - Handheld devices with a small screen and limited bandwidth
+          - `projection` - Projectors
+          - `print` - Print preview mode/printed pages
+          - `screen` - Computer Screens
+          - `tty` - Teletypes and similar media using a fixed-pitch character grid
+          - `tv` - Television type devices with low resolution and limited scroll ability
+        - ### Values:
+          - `width` - Width of targeted display area. `min-` and `max-` prefixes can be used. 
+            - `media="screen and (min-width:500px)"`
+          - `height` - Height of targeted display area. `min-` and `max-` prefixes can be used. 
+            - `media="screen and (max-height:700px)"`
+          - `device-width` - Specifies width of targeted display/paper. `min-`/`max-` prefix usable. 
+            - `media="screen and (device-width:500px)"`
+          - `device-height` - Specifies height of targeted display/paper. `min-`/`max-` prefix usable. 
+            - `media="screen and (device-height:500px)"`
+          - `orientation` - Specifies the orientation of targeted display/paper. `portrait`/`landscape`
+            - `media="all and (orientation: landscape)"`
+          - `aspect-ratio` - Specifies the width/height ratio of the targeted display area. `min-`/`max-` prefixes usable.
+            - `media="screen and (aspect-ratio:16/9)"`
+          - `device-aspect-ratio` - Specifies the device-width/device-height ratio of the targeted display/paper. `min-`/`max-` usable.
+            - `media="screen and (device-aspect-ratio:16/9)"`
+          - `color` - Specifies the bits per color of target display. `min-`/`max-` prefixes usable
+            - `media="screen and (color:3)"`
+          - `color-index` - Specifies the number of colors the target display can handle. `min-`/`max-` usable
+            - `media="screen and (min-color-index:256)"`
+          - `monochrome` - Specifies the bits per pixel in a monochrome frame buffer. `min-`/`max-` usable
+            - `media="screen and (monochrome:2)"`
+          - `resolution` - Specifies the pixel density(dpi/dpcm) of the target display/paper. `min-`/`max-` usable
+            - `media="screen and (resolution:300dpi)"`
+          - `scan` - Specifies scanning method of TV display. `progressive`/`interlace`
+            - `media="tv and (scan:interlace)"`
+          - `grid` - Specifies if the output is grid or bitmap. `1` for grid, `0` for otherwise
+            - `media="handheld and (grid:1)"`
+        - `type` - Specifies the Internet media tpye(MIME type) of the style tag
+          - defaults to `"text/css"`, also the only standard type accepted right now
+    - `<meta>` - Defines metadata about HTML document.  Always goes inside `<head>`.  Machine parseable
+      - Used by browsers, search engines, and other web services
+      - Supports *global attributes*
+      - *Attributes*:
+        - `charset` - Specifies character encoding for HTML document
+          - `<meta charset="UTF-8">`
+        - `content` - Specifies value associated with `http-equiv` or `name` attributes
+          - `<meta name="description" content="My web site">`
+          - `<meta http-equiv="X-UA-Compatible" content="IE=edge">`
+        - `http-equiv` - Provides an HTTP header for the information/value of the `content` attribute
+          - Can be used to simulate an HTTP response header
+          - `<meta http-equiv="content-security-policy|content-type|default-style|refresh">`
+          - `content-security-policy` - Specifies content policy for document
+            - `<meta http-equiv="content-security-policy" content="default-src 'self'">`
+          - `content-type` - Specifies character encoding for the document
+            - `<meta http-equiv="content-type" content="text/html; charset=UTF-8">`
+          - `default-style` - Specifies the preferred stylesheet to use
+            - `<meta http-equiv="default-style" content="docs preferred stylesheet">`
+            - The value of the `content` attribute must match the value of the `title` attribute on a `link` element in the same document, or it must match the value of the `title` attribute on a `style` element in the same document
+          - `refresh` - Defines a time interval for the document to refresh itself
+            - `<meta http-equiv="refresh" content="300">`
+            - Use carefully, as it takes control from the user.  Using refresh will cause a failure in W3C's Web Content Accessibility Guidelines
+          - `x-ua-compatible` - If specified, `content` attribute must have `IE=edge` value.
+        - `name` - Specifies the name for the metadata, used with `content` attribute
+          - *Values*:
+            - `application-name` - Specifies the name of the Web App the page represents
+            - `author` - Specifies the name of the author of the document
+              - `<meta name="author" content="Mike Shuff">`
+            - `description` - Specifies a description of the page.  Search Engines can pick up the description to show in search results
+              - `<meta name="description" content="Just Mike Shuff's Site">`
+            - `generator` - Specifies one of the software packages used to generate the document (not on hand-authored pages)
+              - `<meta name="generator" content="FrontPage 4.0">`
+            - `keywords` - Specifies a comma-separated list of keywords relevant to the page to inform search engines
+              - `<meta name="keywords" content="HTML, meta tag, tag references">`
+            - `viewport` - Controls the viewport(user's visibile area of a web page)
+              - `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+              - Gives the browser instructions on how to control dimensions and scaling
+              - `width=device-width` sets the width of the page to follow the screen-width of the device
+              - `initial-scale=1.0` sets the initial zoom level when page is first loaded
     - `<link>`
     - `<script>`
     - `<base>`
